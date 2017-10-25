@@ -36,12 +36,20 @@ def DisplayMenu():
     UserChoice = int(input())
 
     if(UserChoice == 1):
-        print("Check for holds here")
+        CheckForHolds()
     elif(UserChoice == 3):
         driver.close()
         sys.exit()
     else:
         print("You did not enter a valid option")
+
+def CheckForHolds():
+    driver.find_element_by_link_text("Holds").click()
+    if ("You have no holds" in driver.page_source):
+        print("You have no holds")
+    else:
+        print("You have a hold on your account")
+    driver.find_element_by_link_text("SITE MAP").click()
 
 initialize()
 LogIn()

@@ -5,9 +5,11 @@ from selenium import *
 import sys
 
 #Keep driver global so it is accessable throughout the program
-driver = webdriver.Chrome()#deleted "/Users/chromedriver"
-BossID = input("BossID: ")
-BossPIN = input("BossPIN: ")
+driver = webdriver.Chrome("/Users/chromedriver")
+#Takes input from the console or command line
+BossID = raw_input("Enter your student login in the format XXXXXXX: ")
+# #Takes input from the console or command line and hides it so no one sees the password
+BossPIN = getpass.getpass("Enter your password: ")
 
 
 def initialize():
@@ -50,6 +52,9 @@ def CheckForHolds():
     else:
         print("You have a hold on your account")
     driver.find_element_by_link_text("SITE MAP").click()
+
+def SelectTerm()
+    driver.find_element_by_id()
 
 initialize()
 LogIn()

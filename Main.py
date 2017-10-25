@@ -10,6 +10,7 @@ driver = webdriver.Chrome("/Users/chromedriver")
 BossID = raw_input("Enter your student login in the format XXXXXXX: ")
 # #Takes input from the console or command line and hides it so no one sees the password
 BossPIN = getpass.getpass("Enter your password: ")
+term = raw_input("Enter in the term in the format Quarter Year i.e Winter 2018: ")
 
 
 def initialize():
@@ -31,13 +32,15 @@ def LogIn():
 
 def DisplayMenu():
     print("What would you like to do?")
-    print("[1] Check for Holds")
+    print("[1] Select Term")
+    print("[2] Check for Holds")
     print("[2] Something else")
     print("[3] Exit Program")
 
     UserChoice = int(input())
-
     if(UserChoice == 1):
+        SelectTerm()
+    elif(UserChoice == 2):
         CheckForHolds()
     elif(UserChoice == 3):
         driver.close()
@@ -53,8 +56,10 @@ def CheckForHolds():
         print("You have a hold on your account")
     driver.find_element_by_link_text("SITE MAP").click()
 
-def SelectTerm()
-    driver.find_element_by_id()
+def SelectTerm():
+    driver.find_element_by_link_text("Select Term").click()
+    driver.find_element_by_link_text(term).click()
+
 
 initialize()
 LogIn()
@@ -62,7 +67,4 @@ while(True):
     print()
     DisplayMenu()
 
-# #Takes input from the console or command line
-# username = raw_input("Enter your student login in the format XXXXXXX: ")
-# #Takes input from the console or command line and hides it so no one sees the password
-# password = getpass.getpass("Enter your password: ")
+

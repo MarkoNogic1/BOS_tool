@@ -2,15 +2,52 @@
 import getpass
 from selenium import webdriver
 from selenium import *
+import sys
+
+#Keep driver global so it is accessable throughout the program
+driver = webdriver.Chrome()#deleted "/Users/chromedriver"
+BossID = input("BossID: ")
+BossPIN = input("BossPIN: ")
+
+
 def initialize():
     try:
-        driver = webdriver.Chrome("/Users/chromedriver")
         driver.get("https://boss.latech.edu")
         print("Opening chrome and navigating to Boss")
     except:
         print("The function 'initialize()' did not run successfully.")
 
+def LogIn():
+    driver.find_element_by_link_text("Student B.O.S.S. Login").click()
+    elem = driver.find_element_by_name("SID")
+    elem.clear()
+    elem.send_keys(BossID)
+    elem = driver.find_element_by_name("PIN")
+    elem.clear()
+    elem.send_keys(BossPIN)
+    driver.find_element_by_name("submitbutton").click()
+
+def DisplayMenu():
+    print("What would you like to do?")
+    print("[1] Check for Holds")
+    print("[2] Something else")
+    print("[3] Exit Program")
+
+    UserChoice = int(input())
+
+    if(UserChoice == 1):
+        print("Check for holds here")
+    elif(UserChoice == 3):
+        driver.close()
+        sys.exit()
+    else:
+        print("You did not enter a valid option")
+
 initialize()
+LogIn()
+while(True):
+    print()
+    DisplayMenu()
 
 # #Takes input from the console or command line
 # username = raw_input("Enter your student login in the format XXXXXXX: ")

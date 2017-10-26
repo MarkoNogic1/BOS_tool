@@ -5,12 +5,24 @@ from selenium import *
 import sys
 
 #Keep driver global so it is accessable throughout the program
-driver = webdriver.Chrome("/Users/chromedriver")
+driver = webdriver.Chrome()
+BossID = ""
+BossPIN = ""
+term = ""
+
 #Takes input from the console or command line
-BossID = raw_input("Enter your student login in the format XXXXXXX: ")
+def getUserName():
+    global BossID
+    BossID = input("Enter your student login in the format XXXXXXX: ")
+    while(len(BossID) != 8):
+        BossID = input("Enter your student login in the format XXXXXXX: ")
 # #Takes input from the console or command line and hides it so no one sees the password
-BossPIN = getpass.getpass("Enter your password: ")
-term = raw_input("Enter in the term in the format Quarter Year i.e Winter 2018: ")
+def getPassWord():
+    global BossPIN
+    BossPIN = getpass.getpass("Enter your password in the format XXXXXX: ")
+def getTerm():
+    global term
+    term = input("Enter in the term in the format Quarter Year i.e Winter 2018: ")
 
 
 def initialize():
@@ -60,11 +72,12 @@ def SelectTerm():
     driver.find_element_by_link_text("Select Term").click()
     driver.find_element_by_link_text(term).click()
 
-
+getUserName()
+getPassWord()
+getTerm()
 initialize()
 LogIn()
 while(True):
     print()
     DisplayMenu()
-
 

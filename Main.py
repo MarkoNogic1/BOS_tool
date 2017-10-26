@@ -64,6 +64,7 @@ def DisplayMenu():
         print("You did not enter a valid option")
 
 def CheckForHolds():
+    # Check for student's holds, and alert user of status.
     driver.find_element_by_link_text("Holds").click()
     if ("You have no holds" in driver.page_source):
         print("You have no holds")

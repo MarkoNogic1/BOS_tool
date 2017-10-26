@@ -24,7 +24,7 @@ def getTerm():
     global term
     term = input("Enter in the term in the format Quarter Year i.e Winter 2018: ")
 
-
+#Open the automated web browser page and navigate to the Boss landing page. 
 def initialize():
     try:
         driver.get("https://boss.latech.edu")

@@ -5,14 +5,14 @@ from selenium import *
 import sys
 
 #Keep driver global so it is accessible throughout the program
-driver = webdriver.Chrome("")
+driver = webdriver.Chrome()
 BossID = ""
 BossPIN = ""
 term = ""
 
 #Takes input from the console or command line
-def getUserName(BossID):
-    #global BossID
+def getUserName():
+    global BossID
     BossID = input("Enter your student login in the format XXXXXXX: ")
     while(len(BossID) != 8):
         BossID = input("You did not enter an 8 digit student ID. Please enter your student login in the format XXXXXXX: ")

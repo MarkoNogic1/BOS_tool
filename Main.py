@@ -59,6 +59,7 @@ def DisplayMenu():
         driver.close()
         sys.exit()
     else:
+        #If the user enters something not listed in the menu
         print("You did not enter a valid option")
 
 def CheckForHolds():

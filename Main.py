@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium import *
 import sys
 
-#Keep driver global so it is accessable throughout the program
+#Keep driver global so it is accessible throughout the program
 driver = webdriver.Chrome()
 BossID = ""
 BossPIN = ""
@@ -15,7 +15,7 @@ def getUserName():
     global BossID
     BossID = input("Enter your student login in the format XXXXXXX: ")
     while(len(BossID) != 8):
-        BossID = input("Enter your student login in the format XXXXXXX: ")
+        BossID = input("You did not enter an 8 digit student ID. Please enter your student login in the format XXXXXXX: ")
 # #Takes input from the console or command line and hides it so no one sees the password
 def getPassWord():
     global BossPIN

@@ -5,7 +5,7 @@ from selenium import *
 import sys
 
 #Keep driver global so it is accessable throughout the program
-driver = webdriver.Chrome("/Users/chromedriver")
+driver = webdriver.Chrome()
 BossID = ""
 BossPIN = ""
 term = ""
@@ -13,16 +13,16 @@ term = ""
 #Takes input from the console or command line
 def getUserName():
     global BossID
-    BossID = raw_input("Enter your student login in the format XXXXXXX: ")
+    BossID = input("Enter your student login in the format XXXXXXX: ")
     while(len(BossID) != 8):
-        BossID = raw_input("Enter your student login in the format XXXXXXX: ")
+        BossID = input("Enter your student login in the format XXXXXXX: ")
 # #Takes input from the console or command line and hides it so no one sees the password
 def getPassWord():
     global BossPIN
     BossPIN = getpass.getpass("Enter your password in the format XXXXXX: ")
 def getTerm():
     global term
-    term = raw_input("Enter in the term in the format Quarter Year i.e Winter 2018: ")
+    term = input("Enter in the term in the format Quarter Year i.e Winter 2018: ")
 
 
 def initialize():

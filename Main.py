@@ -70,6 +70,7 @@ def CheckForHolds():
         print("You have a hold on your account")
     driver.find_element_by_link_text("SITE MAP").click()
 
+#Changes the active term in Boss to the one that the user entered when initializing
 def SelectTerm():
     driver.find_element_by_link_text("Select Term").click()
     driver.find_element_by_link_text(term).click()

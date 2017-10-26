@@ -17,7 +17,7 @@ def getUserName():
     while(len(BossID) != 8):
         BossID = input("You did not enter an 8 digit student ID. Please enter your student login in the format XXXXXXX: ")
     return True
-# #Takes input from the console or command line and hides it so no one sees the password
+#Takes input from the console or command line and hides it so no one sees the password
 def getPassWord():
     global BossPIN
     BossPIN = getpass.getpass("Enter your password in the format XXXXXX: ")
@@ -45,6 +45,7 @@ def LogIn():
     driver.find_element_by_name("submitbutton").click()
 
 def DisplayMenu():
+    # Print user options
     print("What would you like to do?")
     print("[1] Select Term")
     print("[2] Check for Holds")

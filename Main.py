@@ -46,7 +46,6 @@ def DisplayMenu():
     print("What would you like to do?")
     print("[1] Select Term")
     print("[2] Check for Holds")
-    print("[2] Something else")
     print("[3] Exit Program")
 
     UserChoice = int(input())

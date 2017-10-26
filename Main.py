@@ -17,10 +17,13 @@ def getUserName():
     while(len(BossID) != 8):
         BossID = input("You did not enter an 8 digit student ID. Please enter your student login in the format XXXXXXX: ")
     return True
+
 #Takes input from the console or command line and hides it so no one sees the password
 def getPassWord():
     global BossPIN
     BossPIN = getpass.getpass("Enter your password in the format XXXXXX: ")
+
+#Takes input from the console or command line for selection for desired school-year term.
 def getTerm():
     global term
     term = input("Enter in the term in the format Quarter Year i.e Winter 2018: ")

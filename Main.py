@@ -22,6 +22,7 @@ def getUserName():
 def getPassWord():
     global BossPIN
     BossPIN = getpass.getpass("Enter your password in the format XXXXXX: ")
+    return True
 
 #Takes input from the console or command line for selection for desired school-year term.
 def getTerm():
